@@ -1,4 +1,4 @@
-package org.linkedin1.pages;
+package org.MercuryTours.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonUtil {
@@ -42,19 +43,6 @@ public CommonUtil (String URL, String waitingtime, String browser){
 	
 	}
 
-public void clickurl(String xpath)
-{
-
-	WebElement element = driver.findElement(By.xpath(xpath));
-	element.click();
-}
-
-public void navigateback()
-
-{
-	driver.navigate().back();
-}
-
 public void txtField(String xpath, String text)
 {
 	WebElement element = driver.findElement(By.xpath(xpath));
@@ -62,7 +50,34 @@ public void txtField(String xpath, String text)
 	
 }
 
+public void clickButton (String xpath)
+{
+	WebElement element = driver.findElement(By.xpath(xpath));
+	element.click();
+}
 
+public void radioButton (String xpath)
+
+{
+	
+	WebElement element = driver.findElement(By.xpath(xpath));
+	element.click();
+}
+
+
+public void dropdown (String xpath, String value)
+{
+	
+	Select ddm = new Select (driver.findElement(By.xpath(xpath)));
+	ddm.selectByValue(value);
+}
+
+public void checkboxselect (String xpath)
+
+{
+	WebElement element = driver.findElement(By.xpath(xpath));
+	element.click();
+}
 
 }
 
